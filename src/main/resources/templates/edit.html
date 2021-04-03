@@ -1,0 +1,11 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<h1 th:text="${id} + ' 수정'"></h1>
+<p th:text="${message}"></p>
+<form action="/edit/pw" method="post">
+    <input type="hidden" name="id" th:value="${id}">
+    <input name="password" type="password">
+    <button type="submit">확인</button>
+</form>
+</body>
+</html>

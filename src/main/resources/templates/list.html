@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<h1>생성된 URL 목록</h1>
+<p><a href="/">URL 단축 서비스</a></p>
+<table>
+    <thead>
+    <tr>
+        <td>id</td>
+        <td>url</td>
+        <td></td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="url: ${urls}">
+        <td><a th:href="@{/${url.id}}" th:text="${url.id}"></a></td>
+        <td><a th:href="${url.url}" th:text="${url.url}"></a></td>
+        <td><a th:href="@{/edit(id=${url.id})}">수정</a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

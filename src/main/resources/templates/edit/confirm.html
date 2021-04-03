@@ -1,0 +1,10 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<h1 th:text="${sUrl.id} + ' 수정'"></h1>
+<form action="/edit_confirm" method="post">
+    <input name="id" th:value="${sUrl.id}" disabled>
+    <input name="url" th:value="${sUrl.url}">
+    <button type="submit">확인</button>
+</form>
+</body>
+</html>

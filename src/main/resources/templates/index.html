@@ -1,0 +1,44 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script>
+        let submitForm = function() {
+            console.log(check("id") || check("url") || check("pw"));
+            if(check("id") || check("url") || check("pw")) {
+                alert("모든 빈칸을 채워주세요.");
+            }else {
+                document.getElementById("form").submit();
+            }
+        }
+
+        let check = function(id) {
+            return document.getElementById(id).value === "";
+        }
+    </script>
+</head>
+<body>
+<h1>URL 단축 서비스</h1>
+<p><a href="/list">생성된 URL 목록</a></p>
+<form id="form" action="/create" method="post">
+    <table>
+        <tbody>
+        <tr>
+            <td>ID</td>
+            <td><input id="id" name="id"></td>
+        </tr>
+        <tr>
+            <td>URL</td>
+            <td><input id="url" name="url"></td>
+        </tr>
+        <tr>
+            <td>PW</td>
+            <td><input id="pw" name="password" type="password"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="button" style="width:100%;" onclick="submitForm()" value="생성"></td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+</body>
+</html>

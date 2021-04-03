@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "spting.datasource.password",
+      "type": "java.lang.String",
+      "description": "Description for spting.datasource.password."
+  }
+] }
